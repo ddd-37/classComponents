@@ -16,7 +16,8 @@ class App extends React.Component {
     );
   }
 
-  render() {
+  // Keep the multiple return statements out of the render method
+  renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>{this.state.errorMessage}</div>;
     }
@@ -26,6 +27,10 @@ class App extends React.Component {
     }
 
     return <Loader message="Please accept location request" />;
+  }
+
+  render() {
+    return <div>{this.renderContent()}</div>;
   }
 }
 
