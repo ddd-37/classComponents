@@ -16,7 +16,7 @@ class App extends React.Component {
     );
   }
 
-  // Keep the multiple return statements out of the render method
+  // Keep the multiple return statements out of the render method!!!!
   renderContent() {
     if (this.state.errorMessage && !this.state.lat) {
       return <div>{this.state.errorMessage}</div>;
