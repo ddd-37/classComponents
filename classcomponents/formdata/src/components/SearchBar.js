@@ -9,10 +9,18 @@ class SearchBar extends React.Component {
     term: ""
   };
 
+  // Using an arrow function here binds the value of this inside the function body to SearchBar
+  onFormSubmit = e => {
+    e.preventDefault();
+
+    // Function passed in as callback from App
+    this.props.onSubmit(this.state.term);
+  };
+
   render() {
     return (
       <div className="ui segment">
-        <form className="ui form" action="">
+        <form className="ui form" action="" onSubmit={this.onFormSubmit}>
           <div className="field">
             <label>Image Search</label>
             <input
